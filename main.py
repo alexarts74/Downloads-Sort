@@ -37,13 +37,9 @@ TYPE_FILE = {
 files = [f for f in BASE_PATH.iterdir()if f.is_file()]
 print(files)
 
-# for f in files:
-#     if f.is_file():
-#         True
 
 for file in files:
     extension = file.suffix
-    # print(extension)
     dossier_cible = TYPE_FILE.get(extension, "Divers")
     dossier_cible_final = BASE_PATH / dossier_cible
     dossier_cible_final.mkdir(exist_ok=True)
